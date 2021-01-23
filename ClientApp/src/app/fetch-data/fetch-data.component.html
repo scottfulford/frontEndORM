@@ -22,3 +22,47 @@
     </tr>
   </tbody>
 </table>
+<h1>Dog</h1>
+
+<div *ngIf="( dogService.stateAsObjectTree$ | async ) as Dog">
+  
+  
+  
+  <span>id: {{Dog.id}}</span><br />
+  <span>name: {{Dog.dogname}}</span>
+  <div>
+    
+    <button (click)="addNewDetachedAddress(Dog)">Add New Detached Address to Store</button><br />
+    <div *ngIf="getNewDetachedAddress()!=null">
+      <h3>New Address</h3>
+      <span>address.id: {{getNewDetachedAddress().id}}</span><br />
+      <span>address.addrline1: {{getNewDetachedAddress().addrline1}}</span><br />
+      <span>address.addrline2: {{getNewDetachedAddress().addrline2}}</span><br />
+      <button (click)="ConfirmNewDetachedAddress()">Confirm Adding New Detached Address to Dog</button>
+    </div>
+    <h3>Dog Address</h3>
+    <div *ngFor="let address of Dog.addresses" style="border:dotted 1px black">      
+      <span>address.id: {{address.id}}</span><br />
+      <span>address.addrline1: {{address.addrline1}}</span><br />
+      <span>address.addrline2: {{address.addrline2}}</span><br />
+    </div>
+  </div>
+
+  <div>
+
+    <h3>Dog Owner</h3>
+    <div *ngIf="Dog.ownerperson as person">
+      <span>person.id: {{person.id}}</span><br />
+      <span>person.firstname: {{person.firstname}}</span><br />
+      <span>person.lastname: {{person.lastname}}</span><br />
+      <h3>Dog Owner Billing Address</h3>
+      <div *ngFor="let address of person.addresses">
+        <button (click)="updateAddress(address)">update</button>
+        <span>address.id: {{address.id}}</span><br />
+        <span>address.addrline1: {{address.addrline1}}</span><br />
+        <span>address.addrline2: {{address.addrline2}}</span><br />
+      </div>
+    </div>
+
+  </div>
+</div>
