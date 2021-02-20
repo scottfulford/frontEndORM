@@ -30,9 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ClientApp\src\app\models\DTOBaseClass.ts">
-      <CustomToolNamespace>DTO\AddressDto.cs</CustomToolNamespace>
-    </None>
     <None Update="ClientApp\src\app\models\AddressDto.ts">
       <CustomToolNamespace>DTO\AddressDto.cs</CustomToolNamespace>
     </None>
@@ -41,6 +38,9 @@
     </None>
     <None Update="ClientApp\src\app\models\DogDto.ts">
       <CustomToolNamespace>DTO\DogDto.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\app\models\DTOBaseClass.ts">
+      <CustomToolNamespace>DTO\AddressDto.cs</CustomToolNamespace>
     </None>
     <None Update="ClientApp\src\app\models\index.ts">
       <CustomToolNamespace>DTO\PersonDto.cs</CustomToolNamespace>

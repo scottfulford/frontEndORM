@@ -17,17 +17,23 @@
         return false;
         
     }
-
+    
+    string getTypeWithoutBracketsIfArray(Property p)
+    {
+        var typestr = p.Type.ToString();
+        if(typestr.EndsWith("[]")){
+            typestr = typestr.Replace("[]","");
+        }
+        return typestr;
+    }
 }
 import { DTOBaseClass } from "./DTOBaseClass";
  $Classes(*Dto)[ 
-
-//types enum
-export enum $Name_ParentChildAssociationProperties {
     $Properties($IsPropertyDTOObject)[
-    $Parent_$Name_property = "$Name",
+import {$getTypeWithoutBracketsIfArray} from "./$getTypeWithoutBracketsIfArray";
 ]
-}
+
+
  
 export class $Name$TypeParameters extends DTOBaseClass{ 
 

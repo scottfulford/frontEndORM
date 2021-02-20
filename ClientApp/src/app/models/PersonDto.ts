@@ -1,17 +1,13 @@
 ﻿
-import { AddressDto } from "./AddressDto";
-import { DogDto } from "./DogDto";
 import { DTOBaseClass } from "./DTOBaseClass";
   
-
-//types enum
-export enum PersonDto_ParentChildAssociationProperties {
     
-    PersonDto_Addresses_property = "Addresses",
+import {AddressDto} from "./AddressDto";
 
-    PersonDto_Dogs_property = "Dogs",
+import {DogDto} from "./DogDto";
 
-}
+
+
  
 export class PersonDto extends DTOBaseClass{ 
 
